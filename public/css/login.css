@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+background: linear-gradient(to bottom, #1D3E53, #254B62);
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.log{
+    width:60%;
+    height: 58%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    /* opacity: 1;
+    /* opacity: 0; */
+    animation: opa  .3s;
+}
+.lef{
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #eee7e7;
+}
+.lef img{
+    width: 100%;
+    height: 100%;
+}
+.cen{
+    width: 50%;
+}
+.righ{
+    width: 50%;
+    height: 100%;
+}
+form h2{
+    text-align: center;
+    margin-top: 4rem;
+    font-family: cursive;
+}
+.inpu{
+    margin-top: 2rem;
+}
+.pass{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+.ema{
+    display: flex;
+    justify-content: center;
+}
+input{
+    width: 72%;
+    height: 34px;
+    border: none;
+    border-radius: 16px;
+    background-color: #eee7e7;
+    padding-left: 10px;
+}
+.butt{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.log-btn{
+    width: 76%;
+    height: 34px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(to left, #4593c4, #254B62);
+    padding-left: 10px;
+}
+.log-btn:hover{
+    cursor: pointer;
+}
+.forget{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.forget p a {
+    color: #3b3939;
+    text-decoration: none;
+    font-size: 12px;
+}
+.forget p:hover{
+    color: #000000;
+    scale: 1.10000;
+    transition: all .2s ease-in;
+    i{
+        color: #000000;
+    }
+    a{
+        color: #000000;
+    }
+}
+.crea{
+    display: flex;
+    justify-content: center;
+    margin-top: 4.5rem;
+}
+.crea p a{
+    color: #3b3939;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0;
+}
+.crea p:hover{
+    /* text-decoration: underline solid #254B62; */
+    color: #000000;
+    scale: 1.10000;
+    transition: all .2s ease-in;
+    i{
+        color: #000000;
+    }
+    a{
+        color: #000000;
+    }
+}
+
+
+
+/* sign up page */
+
+
+.sign{
+    width:60%;
+    height: 68%;
+    background-color: #fff;
+    /* display: flex; */
+    justify-content: center;
+    border-radius: 8px;
+    display: none;
+    opacity: 0;
+    animation: opa  .3s;
+}
+
+.lef-2{
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.go-log{
+    margin-top: 2.5rem;
+}
+
+@keyframes opa{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes opa-2{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media(max-width : 870px){
+    .log{
+        height: 46%;
+    }
+
+    .butt{
+        margin-top: 2rem;
+    }
+}
+@media(max-width : 620px){
+    .log{
+        width: 95%;
+    }    
+}

@@ -1,0 +1,31 @@
+
+    <title>Forget Password</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/forget.css">
+    <div class="log" id="log">
+        <div class="righ">
+            <form class="form-horizontal" role="form" method="POST" action="/auth/password/email" novalidate>                <h2>Forget Password</h2>
+               <div class="inpu">
+                <div class="ema">
+                    <input id="email" type="email" placeholder="Email" name="email" value="" required>
+                    </div>
+               </div>
+               <div class="butt">
+                <button class="log-btn">Forget Password</button>
+               </div>
+               <!-- <div class="forget"> -->
+               <!-- <p><a href="#">Forget Password?</a></p> -->
+               <!-- </div> -->
+               <div class="crea">
+                <p style="display: flex; justify-content: center;align-items: center;">
+                    <a href="/auth/login" style="margin-right: .2rem;" id="gosign" onclick="gosign()">Login</a>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </p>
+               </div>
+            </form>
+        </div>
+        <div class="lef">
+            <img src="http://localhost:3000/images/logo.svg" alt="">
+        </div>
+        
+    </div>

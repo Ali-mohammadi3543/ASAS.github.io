@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: #dcd7d7;
+}
+header{
+    background-color: #fff;
+    box-shadow: 0px 1px 8px black;
+}
+.user{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+.use{
+    display: block;
+    margin-top: 1rem;
+    margin-right: .2rem;
+    margin-bottom: 1rem;
+}
+.use h2{
+    color: #1f1e1e;
+}
+
+.user-icon{
+    color: #4f4b4b;
+    font-size: 2rem;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+nav ul li{
+    padding: 1rem;
+    list-style: none;
+}
+nav ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.list-icon{
+    padding-right: .5rem;
+    color: #1f1e1e;
+}
+nav ul li:hover{
+    color: blue;
+    scale: 1.1;
+    transition: all .4s ease;
+    a,.list-icon{
+        color: blue;
+    }
+}
+
+
+/* table */
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: 67rem;
+  }
+  
+  thead,
+  tfoot {
+    background-color: rgb(228 240 245);
+  }
+  
+  th,
+  td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+    font-family: sans-serif;
+    font-size: 1rem;
+  }
+  
+  td:last-of-type {
+    text-align: center;
+  }
+  
+  tbody > tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+  }
+  
+  tfoot th {
+    text-align: right;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+ 
+.user-h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}  
+.user-h2 h2{
+    font-size: 2rem;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.del a{
+    text-decoration: none;
+    color: #ebe6e6;
+}
+.del{
+    width: 83px;
+    height: 27px;
+    background: #f02929;
+    border: none;
+    border-radius: 4px;
+}
+
+td{
+    text-align: center;
+}

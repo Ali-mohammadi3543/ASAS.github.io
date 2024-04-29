@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: linear-gradient(to left, #141f23 80%, #0c1011 20%);
+    width: 100%;
+    height: 100%;
+}
+
+.nav{
+    width: 20%;
+    height: 100%;
+    box-shadow: 6px 0px 10px #070f18;
+}
+
+.title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+li{
+    list-style: none;
+}
+
+.ul{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-right: 1.6rem;
+}
+.ul ul li{
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li:hover{
+    scale: 1.1;
+    transition: all .3s ease;
+}
+
+i{
+    padding: .4rem;
+    font-size: 1.5rem;
+}
+
+#home-icon{
+    color:#3492bc
+}
+
+#user-icon{
+    color:#e4d12b
+}
+#ticket-icon{
+    color:#c32525
+}
+#plus-icon{
+    color:#51e410
+}
+
+.ul ul li:hover{
+    #home-icon,
+    #user-icon,
+    #plus-icon,
+    #ticket-icon{
+        color: #cac8c8;
+    }
+    #home{
+    color:#3492bc;
+    }
+    #plus{
+        color:#51e410
+    }
+    #ticket{
+        color: #c32525;
+    }
+} 
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+.user h4{
+    letter-spacing: .8px;
+}
+.titr{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.logo{
+    text-align: center;
+    padding-top: 2rem;
+    font-family: cursive;
+    color: #d9d917;
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate{
+    0%{
+        rotate: -30deg;
+    }
+    50%{
+        rotate: 30deg;
+    }
+    100%{
+        rotate: -30deg;
+    }
+}
+
+@keyframes rotatehr{
+    0%{
+        rotate: 70deg;
+    }
+    50%{
+        rotate: 110deg;
+    }
+    100%{
+        rotate: 70deg;
+    }
+}    
+
+
+
+
+@media(max-width: 800px ){
+    .nav{
+        width: 32%;
+        height:100%;
+        box-shadow: none;
+    }
+    body{
+        background: linear-gradient(to left, #141f23 68%, #0c1011 32%);
+    }
+   
+}
+
+
+
+
+@media(max-width: 537px ){
+    .nav{
+        /* width: 54%; */
+        /* height:100%; */
+        box-shadow: none;
+    }
+    .user{
+        display: block;
+    }
+    i,h4{
+        width: 100%;
+        text-align: center;
+        letter-spacing: -1px;
+    }
+    body{
+        /* background: linear-gradient(to left, #141f23 60%, #0c1011 40%); */
+    }
+    textarea{
+        width: 77%;
+    }
+    .textarea-center{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 407px){
+    .textarea-center{
+        display: flex;
+        justify-content: center;
+    }
+    textarea{
+        width: 77%;
+    }
+}
+
+.respa a{
+    border-radius: 6px;
+    background-color: #b22323;
+    padding: .5rem 1.5rem;
+}
+
+
+
+.My-ticket {
+    order: 1; /* ترتیب عوض می‌شود */
+}
+
+@media (max-width: 830px) {
+    .tick {
+        flex-direction: column-reverse;
+    }
+}
+
+
+/* table */
+
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: 80%;
+  }
+  
+  thead,
+  tfoot {
+    background-color: rgb(22 67 86);
+  }
+  
+  th,
+  td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 5px;
+    font-family: sans-serif;
+    font-size: 1rem;
+  }
+  
+  td:last-of-type {
+    text-align: center;
+  }
+  
+  tbody > tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+  }
+  
+  tfoot th {
+    text-align: right;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+ 
+.user-h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}  
+.user-h2 h2{
+    font-size: 2rem;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    height: 18%;
+    width: 80%;
+
+}
+
+.del a{
+    text-decoration: none;
+    color: #ebe6e6;
+}
+.del{
+    width: 83px;
+    height: 27px;
+    background: #6dc04c;
+    border: none;
+    padding: .5rem 1.5rem;
+    border-radius: 4px;
+}
+
+td{
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .del{
+        padding: 0;
+    }
+}
+
+@media (max-width:420px){
+    th,
+    td {
+      border: 1px solid rgb(160 160 160);
+      padding: 8px 1px;
+      font-family: sans-serif;
+      font-size: 1rem;
+    }
+}

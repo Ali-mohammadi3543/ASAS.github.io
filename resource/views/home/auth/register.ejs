@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/register.css">
+<div class="container">
+    <form action="/auth/register" role="form" method="post" class="form" novalidate>
+        <%- include(viewPath('layouts/error-messages')) -%>
+
+        <div class="titr">
+            <h2>ASAS</h2>
+        </div>
+        <div class="top-1">
+            <div class="form-group">
+                <label for="name" class="control-label">Name:</label>
+                <input id="name" type="text" placeholder="please enter your name" class="form-control" name="name" value="<%=  old('name') %>" required><br>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="control-label">Email:</label>
+                <input id="email" type="email" placeholder="please enter your email" class="form-control" name="email" value="<%=  old('email') %>" required=""><br>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="control-label">Pass:</label>
+                <input id="password" type="password" placeholder="please enter your name" class="form-control" name="password" value="<%=  old('password') %>" required=""><br>
+            </div>
+
+
+    <div class="form-group">
+        <%- recaptcha %>
+    </div>
+    <div class="butt">
+    <button class="button">ورود</button>
+    </div>
+        </div>
+
+        <div class="small">
+        <small>ورود شما به معنای پذیرش شرایط اساس و قوانین حریم‌خصوصی است</small>
+        </div>
+    </form>
+</div>

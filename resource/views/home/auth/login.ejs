@@ -1,0 +1,59 @@
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="/css/login.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    
+        <title>Login</title>
+     </head>
+     <body>
+        <div class="log" id="log">
+            <div class="lef">
+                <img src="/images/logo.svg" alt="">
+            </div>
+            <div class="righ">
+                <form action="/auth/login/" role="form" method="POST" class="form">
+                    <%- include(viewPath('layouts/error-messages')) -%>
+    
+                    <h2>Login</h2>
+    
+                   <div class="inpu">
+                    <div class="ema">
+                        <input id="number" type="text" placeholder="Enter Your Number" name="number" value="" required>
+                        </div>
+    
+    
+                   </div>
+                   <div class="butt">
+                    <button class="log-btn">Login</button>
+                   </div>
+    
+                   <div class="crea">
+                    <p style="display: flex; justify-content: center;align-items: center;">
+                    </p>
+                   </div>
+                </form>
+            </div>
+        </div>
+         
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <% if (invalidPhoneNumber) { %>
+        <script>
+            swal.fire({
+                title: 'Invalid Phone Number',
+                text: 'Please enter a valid phone number.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    <% } %>
+
+     </body>
+     </html>

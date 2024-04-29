@@ -1,0 +1,23 @@
+    <link rel="stylesheet" href="/css/Otp.css">
+
+        <h1>Enter OTP</h1>
+        <form action="/auth/otp/verify/" role="form" method="POST" class="form">
+            <input type="hidden" name="token" value="<%= passedVariable %>">
+            <div class="otp-field">
+                <input id="otp" type="text" placeholder="Otp" name="otp" maxlength="5" value="" required>
+            </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <% if (validotp) { %>
+        <script>
+            swal.fire({
+                title: 'OTP Invalid',
+                text: 'Please enter a valid OTP.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    <% } %>

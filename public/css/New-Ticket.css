@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: linear-gradient(to left, #141f23 80%, #0c1011 20%);
+    width: 100%;
+    height: 100%;
+}
+
+.nav{
+    width: 20%;
+    height: 100%;
+    box-shadow: 6px 0px 10px #070f18;
+}
+
+.title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+li{
+    list-style: none;
+}
+
+.ul{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-right: 1.6rem;
+}
+.ul ul li{
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li:hover{
+    scale: 1.1;
+    transition: all .3s ease;
+}
+
+i{
+    padding: .4rem;
+    font-size: 1.5rem;
+}
+
+#home-icon{
+    color:#3492bc
+}
+
+#user-icon{
+    color:#e4d12b
+}
+#ticket-icon{
+    color:#c32525
+}
+#plus-icon{
+    color:#51e410
+}
+
+.ul ul li:hover{
+    #home-icon,
+    #user-icon,
+    #plus-icon{
+        color: #cac8c8;
+    }
+    #home{
+    color:#3492bc;
+    }
+    #plus{
+        color:#51e410
+    }
+    #ticket{
+        color: #c32525;
+    }
+} 
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+.user h4{
+    letter-spacing: .8px;
+}
+.titr{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.logo{
+    text-align: center;
+    padding-top: 2rem;
+    font-family: cursive;
+    color: #d9d917;
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate{
+    0%{
+        rotate: -30deg;
+    }
+    50%{
+        rotate: 30deg;
+    }
+    100%{
+        rotate: -30deg;
+    }
+}
+
+@keyframes rotatehr{
+    0%{
+        rotate: 70deg;
+    }
+    50%{
+        rotate: 110deg;
+    }
+    100%{
+        rotate: 70deg;
+    }
+}   
+
+.kol{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kol-form{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+form{
+    width: 80%;
+}
+
+.name{
+    display: grid;
+}
+
+.lable-phone,
+.lable-name{
+    padding-bottom: .5rem;
+    color: #d5d0d0;
+    font-family: system-ui;
+}
+
+input{
+    width: 16rem;
+    height: 2rem;
+    background: transparent;
+    border: solid 1px #0c1011;
+    padding: 7px;
+    border-radius: 15px;
+    font-size: .9rem;
+    color: #a69e9e;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.input{
+    width: 55%;
+    height: 12rem;
+    background: transparent;
+    border: solid 1px #0c1011;
+    padding: 7px;
+    border-radius: 5px;
+    color: #a69e9e;
+    font-family: system-ui;
+    font-size: .9rem;
+}
+
+.payam{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.butt{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    height: 2.5rem;
+}
+
+button{
+    width: 35%;
+    height: 100%;
+    color: #fff;
+    background: #2b5f26;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+
+@media(max-width: 1240px ){
+    .My-ticket{
+        margin-left: 18rem;
+        margin-right: 3rem;
+    }
+}
+@media(max-width: 1163px ){
+    .My-ticket{
+        margin-left: 12rem;
+        margin-right: 3rem;
+    }
+}
+
+@media(max-width: 1040px ){
+    .My-ticket{
+        margin-left: 8rem;
+        margin-right: 3rem;
+    }
+}
+
+@media(max-width: 955px ){
+    .My-ticket{
+        margin-left: 4rem;
+        margin-right: 3rem;
+    }
+}
+
+@media(max-width: 880px ){
+    .My-ticket{
+        margin-left: 2rem;
+        margin-right: 3rem;
+    }
+}
+
+@media(max-width: 830px ){
+    .My-ticket,
+    .admin-ticket{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .tick{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .box-ticket{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    }
+    .title-my{
+        margin-top: 2rem;
+    }
+    textarea{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 800px ){
+    .nav{
+        width: 34%;
+        height:100%;
+        box-shadow: none;
+    }
+    body{
+        background: linear-gradient(to left, #141f23 70%, #0c1011 30%);
+    }
+   
+}
+
+
+
+
+@media(max-width: 537px ){
+    .nav{
+        width: 54%;
+        height:100%;
+        box-shadow: none;
+    }
+    body{
+        background: linear-gradient(to left, #141f23 60%, #0c1011 40%);
+    }
+    textarea{
+        width: 77%;
+    }
+    .textarea-center{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 407px){
+    .textarea-center{
+        display: flex;
+        justify-content: center;
+    }
+    textarea{
+        width: 77%;
+    }
+}
+
+.respa a{
+    border-radius: 6px;
+    background-color: #b22323;
+    padding: .5rem 1.5rem;
+}
+
+
+
+.My-ticket {
+    order: 1; /* ترتیب عوض می‌شود */
+}
+
+@media (max-width: 830px) {
+    .tick {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 780px) {
+    .kol-form {
+        display: grid;
+    }
+    .phone{
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 470px) {
+    input {
+        width: 12rem;
+    }
+}

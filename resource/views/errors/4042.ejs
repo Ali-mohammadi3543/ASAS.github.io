@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 - Not Found</title>
+    <link rel="stylesheet" href="/css/4042.css">
+</head>
+<body>
+    <h1>404</h1>
+    <h2 id="text-box-h1"></h2>
+
+<script>
+    
+document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.getElementById('text-box-h1');
+    let textToType = 'Oops NOT FOUND';
+    let iterationCounter = 0; // Counter to track the number of iterations
+
+    function startTypewriter() {
+        typeWriter(textToType, 0, () => {
+            setTimeout(() => {
+                eraseText(() => {
+                    iterationCounter++; // Increment the iteration counter
+
+                    startTypewriter(); // Call startTypewriter again for the next iteration
+                });
+            }, 1000); // Wait for 1 second before erasing
+        });
+    }
+
+    function typeWriter(text, i, callback) {
+        if (i < text.length) {
+            textElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(() => typeWriter(text, i, callback), 100);
+        } else {
+            callback(); // Call the callback function when typing is complete
+        }
+    }
+
+    function eraseText(callback) {
+        const text = textElement.innerHTML;
+        const length = text.length;
+        if (length > 0) {
+            textElement.innerHTML = text.slice(0, length - 1);
+            setTimeout(() => eraseText(callback), 50);
+        } else {
+            callback(); // Call the callback function when erasing is complete
+        }
+    }
+
+    startTypewriter(); // Start the typewriter animation
+});
+
+    </script>
+</body>
+</html>

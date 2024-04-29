@@ -1,0 +1,71 @@
+
+<link rel="stylesheet" href="/css/respone-ticket.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<title>Response-Ticket</title>
+
+<header>
+  <div class="user" dir="rtl">
+    <div class="icon">
+    <i class='bx bxs-user-circle user-icon'></i>
+    </div>
+    <div class="use">
+      <h2>Admin</h2>
+    </div>
+  </div>
+  <hr>
+  <nav>
+    <ul>
+        <li style="display: flex;"><i class='bx bx-message-dots list-icon'></i><a href="/admin/tickets">Ticket</a></li>
+        <li style="display: flex;"><i class='bx bx-user list-icon'></i><a href="/admin/users">Users</a></li>
+        <li style="display: flex;"><i class='bx bx-home list-icon'></i><a href="/admin">Dashboard</a></li>
+  </ul>
+  </nav>
+</header>
+<% let kosnanat = true %>
+<% let kosmadaret = true %>
+
+<div class="kol">
+  <% tickets.docs.forEach(Ticket => { %>
+
+    <% if(!Ticket.AdminTicket) { %> 
+  <div class="user-ticket ticket">
+    <% if(kosnanat) { %> 
+      <div class="h2-user">
+          <h2>User Ticket</h2>
+      </div>
+      <% } %>
+      <% kosnanat=false %>
+      <div class="box-user box" >
+        <h4><%= Ticket.Ticket %></h4>
+    </div>
+
+  </div>
+  <% } %>
+
+  <% if(Ticket.AdminTicket) { %> 
+  <div class="admin-ticket ticket">
+    <% if(kosmadaret) { %> 
+      <div class="h2-admin">
+      <h2>Admin Ticket</h2>
+      </div>
+      <% } %>
+      <% kosmadaret=false %>
+      <div class="box-admin box">
+        <h4><%= Ticket.Ticket %></h4>
+    </div>
+  </div>
+  <% } %>
+  <% }); %>
+
+</div> 
+
+<form action="/admin/response/send" role="form" method="POST" class="form">
+    <input type="hidden" name="token" value="<%= req.params.id %>">  <div class="text">
+  <textarea name="sendticket" id="sendticket" cols="30" rows="10" placeholder="Send Ticket"></textarea>
+  </div>
+  <div class="butt">
+    <button class="log-btn">Send</button>
+</div>
+</form>
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

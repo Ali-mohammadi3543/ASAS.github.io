@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asas Tech</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/images/logo.svg">
+
+</head>
+<body>
+
+<html>
+<head>
+    <title>Asas</title>
+    <script>
+function showPage(page) {
+    document.querySelectorAll('.page').forEach(function (el) {
+        el.classList.remove('show'); // Remove the 'show' class from all pages
+        el.style.display = 'none';
+    });
+
+    var currentPage = document.getElementById(page);
+    currentPage.style.display = 'block'; // Ensure the page is displayed
+    setTimeout(() => {
+        currentPage.classList.add('show'); // Add the 'show' class with a delay
+    }, 10); // Short delay to allow for the initial layout rendering
+}
+
+    </script>
+    <style>
+.page {
+    opacity: 0; /* Initially, pages are hidden with opacity set to 0 */
+    transition: opacity 0.5s ease-in-out; /* Add a transition effect for opacity */
+    /* visibility: hidden; Initially, pages are not displayed */
+    display: none;
+}
+
+.page.show {
+    opacity: 1; /* When a page is shown, set opacity to 1 */
+    /* visibility: visible; Make sure the page is displayed */
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="page">
+        <body>
+            <div>
+            <div class="starsec"></div>
+            <div class="starthird"></div>
+            <div class="starfourth"></div>
+            <div class="starfifth"></div>
+          </div>
+            <header class="header" id="header">
+                <nav class="nav-bar">
+                  <% if(auth.check) { %>
+                    <a href="/user/panel" class="btn">User Panel</a>
+                  <% } else { %>
+                    <a href="/auth/login" class="btn">Login / Register</a>
+                  <% } %>
+                                    <div class="user-icon">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(255,255,255);"><path d="M12 2A10.13 10.13 0 0 0 2 12a10 10 0 0 0 4 7.92V20h.1a9.7 9.7 0 0 0 11.8 0h.1v-.08A10 10 0 0 0 22 12 10.13 10.13 0 0 0 12 2zM8.07 18.93A3 3 0 0 1 11 16.57h2a3 3 0 0 1 2.93 2.36 7.75 7.75 0 0 1-7.86 0zm9.54-1.29A5 5 0 0 0 13 14.57h-2a5 5 0 0 0-4.61 3.07A8 8 0 0 1 4 12a8.1 8.1 0 0 1 8-8 8.1 8.1 0 0 1 8 8 8 8 0 0 1-2.39 5.64z"></path><path d="M12 6a3.91 3.91 0 0 0-4 4 3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4zm0 6a1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2 1.91 1.91 0 0 1-2 2z"></path></svg></a>
+                  </div>
+                  <div class="nav-ul" onclick="back()">
+                        <ul>
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#" onclick="gotosupport()">Support</a></li>
+                          <li><a href="#" onclick="gotoServices()">Services</a></li>
+                          <li><a href="#" onclick="showPage('page2')">About Us</a></li>
+                          <li><a href="#" onclick="gotoContact()">Contact Us</a></li>
+                        </ul>
+                  </div>
+                  
+                  <div class="cente">
+                    <div class="hamber-menu" id="hamber-menu2">
+                      <div class="icon-hamber" onclick="toggleul2()" style="cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(255,255,255 ); "><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+                      </div>
+                      <div class="hamber">
+                        <ul class="li-hamber hidden" id="li-hamber2">
+                          <li><a href="#" onclick="gotosupport()">Support</a></li>
+                          <li><a href="#" onclick="gotoServices()">Services</a></li>
+                          <li><a href="#" onclick="showPage('page2')">About Us</a></li>
+                          <li><a href="#" onclick="gotoContact()">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+        
+                </nav>
+                  <div class="text-box">
+                      <h1 id="text-box-h1"></h1>
+                      <p class="text-box-p">Take your business to new heights with our cutting-edge web development expertise.</p>
+                      <button class="btn2">Explore our Services</button>
+                  </div>
+              </header>
+        
+              <button onclick="topFunction()" id="myBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.293 12.707L12 10.414l-4.293 4.293-1.414-1.414L12 7.586l5.707 5.707-1.414 1.414z"></path></svg></button>
+
+            <section id="about-us" class="section about-us">
+                <h1> Support</h1>
+                <p style="margin-bottom: 2rem;">Our web design services include website development, responsive design, e-commerce solutions, <br>and more for all your online needs.</p>
+                <div class="row">
+                <div class="course-col">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(220, 148, 220, 1)"><path d="M9.38 21.646A9.985 9.985 0 0 0 12 22l.141-.001a2.998 2.998 0 0 0 2.515-1.425c.542-.876.6-1.953.153-2.88l-.198-.415c-.453-.942-.097-1.796.388-2.281.485-.485 1.341-.841 2.28-.388h.001l.413.199a2.99 2.99 0 0 0 2.881-.153A2.997 2.997 0 0 0 22 12.141a9.926 9.926 0 0 0-.353-2.76c-1.038-3.827-4.353-6.754-8.246-7.285-3.149-.427-6.241.602-8.471 2.833S1.666 10.247 2.096 13.4c.53 3.894 3.458 7.208 7.284 8.246zM15.5 6a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-5-1a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 15.506a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-2.5-6.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 6.5 9.006z"></path></svg>
+                    <h3>UI/UX Design</h3>
+                    <p class="txt" style="color: black;">User interface (UI) and user experience (UX) design have a significant impact on the success of your website. Based on the latest standards and approaches in UI/UX, I will design a website that attracts users and provides them with an exceptional experience.
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="course-col">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 384 512"><path fill="#2053ac" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 384 512"><path fill="#ce5709" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"/></svg>
+                    <h3>Responsive Web Design</h3>
+                    <p class="txt"style="color: black;" >Website design is the most crucial part of your online presence for any business. Based on your needs and goals, I will design a website that not only provides visual appeal but also offers high functionality and an optimized user experience.
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="course-col">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512"><path fill="#c41212" d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z"/></svg>
+                    <h3>Security</h3>
+                    <p class="txt"style="color: black;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quas molestias nam eum ab voluptate illo ducimus libero officia aut, consequuntur ullam dolores optio,
+                        quibusdam sequi tempore unde expedita magni.</p>
+                </div>
+                </div>
+        
+                <div class="row1">
+                    <div class="course-col">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512"><path fill="#cfac2a" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                        <h3>Website Maintenance and Support</h3>
+                        <p class="txt" style="color: black;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quas molestias nam eum ab voluptate illo ducimus libero officia aut, consequuntur ullam dolores optio,
+                            quibusdam sequi tempore unde expedita magni.</p>
+                    </div>
+                    <div class="course-col">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512"><path fill="#25ad84" d="M220.6 121.2L271.1 96 448 96v96H333.2c-21.9-15.1-48.5-24-77.2-24s-55.2 8.9-77.2 24H64V128H192c9.9 0 19.7-2.3 28.6-6.8zM0 128V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H271.1c-9.9 0-19.7 2.3-28.6 6.8L192 64H160V48c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16l0 16C28.7 64 0 92.7 0 128zM168 304a88 88 0 1 1 176 0 88 88 0 1 1 -176 0z"/></svg>                <h3>Digital Creating</h3>
+                        <p class="txt"style="color: black;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quas molestias nam eum ab voluptate illo ducimus libero officia aut, consequuntur ullam dolores optio,
+                            quibusdam sequi tempore unde expedita magni.</p>
+                    </div>
+                    <div class="course-col">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 576 512"><path fill="#b807bb" d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V288H64V64H512z"/></svg>
+                        <h3>Custom Website Design</h3>
+                        <p class="txt" style="color: black;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quas molestias nam eum ab voluptate illo ducimus libero officia aut, consequuntur ullam dolores optio,
+                            quibusdam sequi tempore unde expedita magni.</p>
+                    </div>
+                </div>
+        
+            </section>
+        
+            <main class="main flow" id="Services">
+                <h1 class="main__heading">Services</h1>
+                <div class="main__cards cards">
+                  <div class="cards__inner">
+                    <div class="cards__card card">
+                      <h2 class="card__heading">Basic design plan</h2>
+                      <p class="card__price">Starting from 4 million tomans</p>
+                      <ul role="list" class="card__bullets flow">
+                        <li>Average loading speed</li>
+                        <li>Free support for up to 3 months</li>
+                        <li>Ability to choose from ready-made templates</li>
+                        <li>Designing 3 main pages (home page – contact us – about us)</li>
+                        <li>Blog content entry – 1 article</li>
+                        <li>Advice on receiving Enamad</li>
+                        <li>Contact us form</li>
+                        <li>Blog section design</li>
+                      </ul>
+                      <a href="#basic" class="card__cta cta">Get Started</a>
+                    </div>
+              
+                    <div class="cards__card card">
+                      <h2 class="card__heading">professional design plan</h2>
+                      <p class="card__price">Starting from 10 million Tomans
+
+
+                      </p>
+                      <ul role="list" class="card__bullets flow">
+                        <li>High loading speed
+                        </li>
+                        <li>Free support for up to 6 months
+                        </li>
+                        <li>Optimized coding for increased speed
+                        </li>
+                        <li>Choice of ready-made templates
+                        </li>
+                        <li>Design of the main pages plus 5 custom pages
+                        </li>
+                        <li>Penetration testing and website security review
+                        </li>
+                        <li>Free registration of a .ir domain
+                        </li>
+                        <li>Blog content entry – 5 articles
+                        </li>
+                        <li>Creation of an online store
+                        </li>
+                        <li>Obtaining e-Namad certification
+                        </li>
+                        <li>Contact us form
+                        </li>
+                        <li>Creation of user panel and user management
+                        </li>
+                        <li>Blog section design
+                        </li>
+
+                      </ul>
+                      <a href="#pro" class="card__cta cta">Upgrade to Pro</a>
+                    </div>
+              
+                    <div class="cards__card card">
+                      <h2 class="card__heading">Ultimate Design Plan</h2>
+                      <p class="card__price">Starting from 15 million Tomans</p>
+                      <ul role="list" class="card__bullets flow">
+                        <li>High loading speed
+                        </li>
+                        <li>Free support for up to 1 year
+                        </li>
+                        <li>Optimized coding for increased speed
+                        </li>
+                        <li>Choice of ready-made templates
+                        </li>
+                        <li>Design of the main pages plus 5 custom pages
+                        </li>
+                        <li>Penetration testing and website security review
+                        </li>
+                        <li>Free registration of a .ir and .com domain
+                        </li>
+                        <li>Blog content entry – 5 articles
+                        </li>
+                        <li>Creation of an online store
+                        </li>
+                        <li>Obtaining e-Namad certification
+                        </li>
+                        <li>Contact us form
+                        </li>
+                        <li>Creation of user panel and user management
+                        </li>
+                        <li>Blog section design
+                        </li>
+                      </ul>
+                      <a href="#ultimate" class="card__cta cta">Go Ultimate</a>
+                    </div>
+                  </div>
+                  
+                  <div class="overlay cards__inner"></div>
+                </div>
+              </main>
+        
+        
+              <section class="banner">
+                <h4>Subscribe Now!</h4>
+                <h2>To get more information about our services contact with our expertises</h2>
+                <% if(auth.check) { %>
+                  <button class="btn3"><a href="/user/panel" style="text-decoration: none;">Contact Us</a></button>
+
+                <% } else { %>
+
+                <button class="btn3"><a href="/auth/login" style="text-decoration: none;">Contact Us</a></button>
+                <% } %>
+
+              </section>
+
+            
+              <footer class="foot" id="footer">
+                <div class="container">
+                    <div class="left">
+                        <h2>Get in Touch</h2>
+                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                        <ul>
+                            <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path></svg></a>
+                            <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg></a>
+                            <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg></a>
+                            <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><circle cx="4.983" cy="5.009" r="2.188"></circle><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path></svg></a>
+                        </ul>
+                    </div>
+                    <Div class="right">
+                      <div class="img1"><img src="/images/IMG_6833.JPG" style="width:25vh ; height: 25vh; "></div>
+                      <div class="img2"><img src="/images/IMG_6942.JPG" style="width:25vh ; height: 25vh; "></div>
+                    </Div>
+                </div>
+            </footer>
+              
+            
+              
+        
+        
+        
+        
+            <script >
+                
+                document.addEventListener('DOMContentLoaded', function () {
+                const textElement = document.getElementById('text-box-h1');
+                const textToType = 'Code the Future,Today';
+          
+            function startTypewriter() {
+              typeWriter(textToType, 0, () => {
+                setTimeout(() => {
+                  eraseText(() => {
+                    startTypewriter(); 
+                  });
+                }, 1000); 
+              });
+            }
+          
+            function typeWriter(text, i, callback) {
+              if (i < text.length) {
+                textElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(() => typeWriter(text, i, callback), 100);
+              } else {
+                callback();
+              }
+            }
+          
+            function eraseText(callback) {
+              const text = textElement.innerHTML;
+              const length = text.length;
+              if (length > 0) {
+                textElement.innerHTML = text.slice(0, length - 1);
+                setTimeout(() => eraseText(callback), 50);
+              } else {
+                callback(); 
+              }
+            }
+          
+            startTypewriter();
+          });
+        
+        
+        
+                function gotosupport() {
+                var supportSection = document.getElementById('about-us');
+        
+                if (supportSection) {
+                    supportSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                    });
+                }
+                }
+        
+                function gotoServices() {
+                var servicesSection = document.getElementById('Services');
+        
+                if (servicesSection) {
+                    servicesSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                    });
+                }
+                }
+        
+                function gotoContact() {
+                var ContactSection = document.getElementById('footer');
+        
+                if (ContactSection) {
+                    ContactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                    });
+                }
+                }
+        
+                const hamber_menu2 = document.getElementById('hamber-menu2');
+                const li_hamber2 = document.getElementById('li-hamber2');
+
+                  function toggleul2() {
+                  li_hamber2.classList.toggle('hidden');
+                }
+                let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    // For modern browsers
+    document.documentElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    // For Safari
+    document.body.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+        
+            </script>
+        
+        
+        </body>
+    </div>
+
+
+    <div id="page2" class="page">
+        <body>
+          <link rel="stylesheet" href="/css/aboutus.css">
+
+            <header class="header2" id="header2">
+                <nav class="nav-bar nav-bar2">
+                  <% if(auth.check) { %>
+                    <a href="/user/panel" class="btn">User Panel</a>
+                  <% } else { %>
+                    <a href="/auth/login" class="btn">Login / Register</a>
+                  <% } %>                  <div class="user-icon">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(255,255,255);"><path d="M12 2A10.13 10.13 0 0 0 2 12a10 10 0 0 0 4 7.92V20h.1a9.7 9.7 0 0 0 11.8 0h.1v-.08A10 10 0 0 0 22 12 10.13 10.13 0 0 0 12 2zM8.07 18.93A3 3 0 0 1 11 16.57h2a3 3 0 0 1 2.93 2.36 7.75 7.75 0 0 1-7.86 0zm9.54-1.29A5 5 0 0 0 13 14.57h-2a5 5 0 0 0-4.61 3.07A8 8 0 0 1 4 12a8.1 8.1 0 0 1 8-8 8.1 8.1 0 0 1 8 8 8 8 0 0 1-2.39 5.64z"></path><path d="M12 6a3.91 3.91 0 0 0-4 4 3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4zm0 6a1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2 1.91 1.91 0 0 1-2 2z"></path></svg></a>
+                  </div>
+                  <div class="nav-ul" onclick="back()">
+                        <ul>
+                          <li><a href="#" onclick="showPage('page1')">Home</a></li>
+                          <li><a href="#" onclick="showPage('page1'),gotosupport()">Support</a></li>
+                          <li><a href="#" onclick="showPage('page1'),gotoServices()">Services</a></li>
+                          <li><a href="#" onclick="showPage('page1'),gotoContact()">Contact Us</a></li>
+                        </ul>
+                  </div>
+                  
+                  <div class="cente">
+                    <div class="hamber-menu" id="hamber-menu">
+                      <div class="icon-hamber" onclick="toggleul()" style="cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(255,255,255 ); "><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+                      </div>
+                      <div class="hamber">
+                        <ul class="li-hamber hidden" id="li-hamber">
+                            <li><a href="#" onclick="showPage('page1')">Home</a></li>
+                            <li><a href="#" onclick="showPage('page1')">Support</a></li>
+                            <li><a href="#" onclick="showPage('page1')">Services</a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+            
+                </nav>
+
+              </header>
+
+              <section id="text-aboutus">
+                <h4>
+                  Welcome to a world of innovation and creativity, where our web development and design team is ready to turn your digital presence dreams into reality. We proudly stand as your trusted partners on this adventurous journey.
+
+                <br>Our team is composed of dynamic and efficient professionals that are always pushing our projects ahead with dedication and imagination to attain the greatest levels of quality and customer innovation. We aspire to provide our customers with an exceptional experience by giving new and appealing solutions. <br>
+
+                From the very beginning, our goal has always been to foster close relationships with our clients and provide tailored services to meet their needs. Your trust in us forms the core of our actions, driving us to establish mutually beneficial and enduring relationships with all our clients.
+
+                <br>If you're seeking a successful partnership and solutions tailored to your needs, we are ready to collaborate with you. Contact us to embark on an exciting and adventurous journey in your digital world.
+
+                </h4>
+
+              </section>
+              
+        
+
+        <footer class="foot" id="footer">
+          <div class="container">
+              <div class="left">
+                  <h2>Get in Touch</h2>
+                  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                  <ul>
+                      <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path></svg></a>
+                      <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg></a>
+                      <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg></a>
+                      <a class="btn4" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(236, 239, 241, 1);"><circle cx="4.983" cy="5.009" r="2.188"></circle><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path></svg></a>
+                      <p style="color: white;">Online Users: <span id="userCount" style="color: white;">0</span></p>
+                    </ul>
+              </div>
+              <Div class="right">
+                  <div class="img1"><img src="/images/IMG_6833.JPG" style="width:25vh ; height: 25vh; "></div>
+                  <div class="img2"><img src="/images/IMG_6942.JPG" style="width:25vh ; height: 25vh; "></div>
+              </Div>
+          </div>
+      </footer>
+              
+        </body>
+    </div>
+
+    <script>
+        showPage('page1');
+    </script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            
+            // Listen for the 'updateUserCount' event and update the display
+            socket.on('updateUserCount', (userCount) => {
+                document.getElementById('userCount').innerText = userCount;
+            });
+        </script>
+</body>
+</html>
+
+    
+</body>
+</html>

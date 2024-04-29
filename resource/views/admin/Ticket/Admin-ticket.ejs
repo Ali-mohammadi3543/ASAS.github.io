@@ -1,0 +1,50 @@
+
+  <link rel="stylesheet" href="/css/Admin-ticket.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Admin-Ticket</title>
+
+  <header>
+    <div class="user" dir="rtl">
+      <div class="icon">
+      <i class='bx bxs-user-circle user-icon'></i>
+      </div>
+      <div class="use">
+        <h2>Admin</h2>
+      </div>
+    </div>
+    <hr>
+    <nav>
+      <ul>
+        <li style="display: flex;"><i class='bx bx-message-dots list-icon'></i><a href="/admin/tickets">Ticket</a></li>
+        <li style="display: flex;"><i class='bx bx-user list-icon'></i><a href="/admin/users">Users</a></li>
+        <li style="display: flex;"><i class='bx bx-home list-icon'></i><a href="/admin">Dashboard</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <div class="tab">
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">phone</th>
+            <th scope="col">Name</th>
+            <th scope="col">Message</th>
+            <th scope="col">Respone</th>
+          </tr>
+        </thead>
+        <% Tickets.docs.forEach(Ticket => { %>
+
+        <tbody>
+          <tr>
+            <td scope="row"><%= Ticket.phone %></td>
+            <td><%= Ticket.name %></td>
+            <td class="te"><%= Ticket.TicketName %></td>
+            <td><a href="/admin/response/<%= Ticket._id %>" class="del" style="background-color: #9e3030;">Response</a></td>
+          </tr>
+        </tbody>
+        <% }) %>
+  </div>
+   
+  
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+

@@ -1,0 +1,31 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/panel.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>Dashbord</title>
+    </head>
+    <body>
+        
+
+    <div class="nav">
+        <h1 class="logo">ASAS</h1>
+        <div class="title">
+        <h2 class="titr">User Panel</h2>
+        </div>
+        <div class="user"><i class='bx bx-user' style='color:#e2dddd'></i><h4><%= auth.user.phone %></h4></div>
+        <nav class="ul">
+            <ul>
+                <li><i class='bx bxs-home-alt-2' id="home-icon"></i><a id="home" href="/">Home</a></li>
+                <li><i class='bx bxs-message-rounded' id="ticket-icon"></i><a id="ticket" href="/user/panel/Tickets">Ticket</a></li>
+                <li><i class='bx bx-plus-medical' id="plus-icon" ></i><a id="plus" href="/user/panel/Tickets/New-Ticket">New Ticket</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+
+    </body>
+    </html>

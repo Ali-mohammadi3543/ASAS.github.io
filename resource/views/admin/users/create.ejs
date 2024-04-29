@@ -1,0 +1,54 @@
+  <link rel="stylesheet" href="/css/create.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Create</title>
+
+  <header>
+    <div class="user" dir="rtl">
+      <div class="icon">
+      <i class='bx bxs-user-circle user-icon'></i>
+      </div>
+      <div class="use">
+        <h2>Admin</h2>
+      </div>
+    </div>
+    <hr>
+    <nav>
+      <ul>
+        <li style="display: flex;"><i class='bx bx-message-dots list-icon'></i><a href="/admin/tickets">Ticket</a></li>
+        <li style="display: flex;"><i class='bx bx-user list-icon'></i><a href="/admin/users">Users</a></li>
+        <li style="display: flex;"><i class='bx bx-home list-icon'></i><a href="/admin/">Dashboard</a></li>
+    </ul>
+    </nav>
+  </header>
+<div class="cent">
+    <div class="titr">
+        <h2>New Member</h2>
+      </div>
+      <form class="form-horizontal" method="POST" action="/admin/users" novalidate>
+        <div>
+      <div class="name inp">
+        <label for="name">Name : </label><br>
+        <input type="text" placeholder="Name" name="name" value="" required>
+    </div>
+    <div class="email inp">
+        <label for="email">Email : </label><br>
+        <input type="email" placeholder="Email" name="email" value="" required="">
+    </div>
+    <div class="phone inp">
+        <label for="phone">Phone : </label><br>
+        <input type="tel" placeholder="Phone" name="phone" value="" required>
+    </div>
+    <div class="password inp">
+        <label for="password">Password : </label><br>
+        <input type="password" placeholder="Password" name="password" value="" required="">
+    </div>
+        <div class="butto">
+    <button style="background: green;color: aliceblue;">Create</button>
+        </div>
+</div>
+      </form>
+</div>
+   
+  
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
